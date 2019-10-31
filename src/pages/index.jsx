@@ -65,7 +65,7 @@ const Index = ({}) => (
     <Parallax pages={5}>
       <Hero offset={0}>
         <BigTitle>
-          Lost Photons <br /> The Photon Enclave.
+          Deep Sky Artist
         </BigTitle>
         <Subtitle>Landscape and Astrophotography<br />Aashish Sheshadri</Subtitle>
       </Hero>
@@ -107,16 +107,11 @@ const Index = ({}) => (
         <AboutHero>
           <Avatar src={avatar} alt="Aashish Sheshadri" />
           <AboutSub>
-            I help photons find a home.<br /><br />
-            While I am not rescuing photons I am busy being a Computer Scientist.
+            Collecting photons that have been travelling several light years from distant stars in the midst of
+          man created photons to paint a truly telling picture.
           </AboutSub>
         </AboutHero>
         <AboutDesc>
-          There is something magical about collecting photons that have been
-          travelling several light years from distant stars in the midst of
-          man created photons to paint a truly telling picture.<br /><br />
-          In this space I share with the world agglomerations of exotic photons.
-          <br /><br /><br /><br />
           <InstaCard />
         </AboutDesc>
       </About>
