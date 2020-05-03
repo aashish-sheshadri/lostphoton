@@ -9,7 +9,7 @@ import SVG from '../components/SVG'
 
 const Projects = ({ children, offset }) => (
   <>
-    // <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={`${offset}.1`} />
+    <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={`${offset}.1`} />
     <DividerMiddle
       bg="linear-gradient(to right, DarkSlateBlue 0%, MidnightBlue 100%)"
       // bg="#23262b"

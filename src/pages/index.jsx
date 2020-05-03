@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
-import {graphql} from 'gatsby'
 
 // Components
 import Layout from '../components/Layout'
@@ -102,7 +101,7 @@ const Index = ({}) => (
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <About offset={3}>
+      <About offset={2.9}>
         <Title>About</Title>
         <AboutHero>
           <Avatar src={avatar} alt="Aashish Sheshadri" />
@@ -115,7 +114,7 @@ const Index = ({}) => (
           <InstaCard />
         </AboutDesc>
       </About>
-      <Contact offset={4}>
+      <Contact offset={3.5}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
@@ -124,7 +123,7 @@ const Index = ({}) => (
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 by Aashish Sheshadri{' '}
+          &copy; 2020 by Aashish Sheshadri{' '}
         </Footer>
       </Contact>
     </Parallax>

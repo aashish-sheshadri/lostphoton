@@ -7,6 +7,29 @@ module.exports = {
   /* General Information */
   siteMetadata: {
     siteUrl: config.siteUrl + pathPrefix,
+    title: 'Aashish Sheshadri',
+    menuLinks:[
+      {
+        name:'Home',
+        link:'/'
+      },
+      {
+        name:'Landscapes',
+        link:'/landscapes'
+      },
+      {
+        name:'Milkyway',
+        link:'/milkyway'
+      },
+      {
+        name:'Galaxies',
+        link:'/galaxies'
+      },
+      {
+        name:'Nebulae',
+        link:'/nebulae'
+      }
+    ]
   },
   /* Plugins */
   plugins: [
@@ -61,6 +84,18 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
           bucketName: 'lostphoton.com'
+      }
+    },
+    {
+      resolve: `gatsby-theme-gallery`,
+      options: {
+        galleryPath: 'content/gallery'
+      }
+    },
+    {
+      resolve: `gatsby-theme-gallery`,
+      options: {
+        galleryPath: 'content/gallery/dummy'
       }
     },
     /* Must be placed at the end */

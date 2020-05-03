@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
+import { Gallery } from "gatsby-theme-gallery";
 
 // Components
 import Layout from '../components/Layout'
@@ -15,16 +16,11 @@ import Hero from '../views/Hero'
 const GalaxyPage = ({}) => (
   <>
     <Layout />
-    <Parallax pages={1}>
-      <Hero offset={0}>
-        <center>
-          <BigTitle>
-            Collecting Photons.
-          </BigTitle>
-          <Subtitle>...In Construction</Subtitle>
-        </center>
-      </Hero>
-    </Parallax>
+    {/* <Parallax pages={5}> */}
+      {/* <Hero offset={0}> */}
+        <Gallery />
+      {/* </Hero> */}
+    {/* </Parallax> */}
   </>
 )
 
