@@ -28,6 +28,14 @@ module.exports = {
       {
         name:'Nebulae',
         link:'/nebulae'
+      },
+      {
+        name:'Solar System',
+        link:'/solarsystem'
+      },
+      {
+        name:'Clusters',
+        link:'/starclusters'
       }
     ]
   },
@@ -40,6 +48,55 @@ module.exports = {
       options: {
         path: `${__dirname}/src/images/`,
         name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/gallery/`,
+        name: 'content/gallery',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/landscapes/`,
+        name: 'content/landscapes',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/milkyway/`,
+        name: 'content/milkyway',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/galaxy/`,
+        name: 'content/galaxy',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/nebulae/`,
+        name: 'content/nebulae',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/solarsystem/`,
+        name: 'content/solarsystem',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/starclusters/`,
+        name: 'content/starclusters',
       },
     },
     {
@@ -86,18 +143,7 @@ module.exports = {
           bucketName: 'lostphoton.com'
       }
     },
-    {
-      resolve: `gatsby-theme-gallery`,
-      options: {
-        galleryPath: 'content/gallery'
-      }
-    },
-    {
-      resolve: `gatsby-theme-gallery`,
-      options: {
-        galleryPath: 'content/gallery/dummy'
-      }
-    },
+    'gatsby-plugin-typescript',
     /* Must be placed at the end */
     'gatsby-plugin-offline',
     'gatsby-plugin-netlify',

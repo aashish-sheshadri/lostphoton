@@ -66,9 +66,22 @@ const Index = ({}) => (
         <BigTitle>
           Deep Sky Artist
         </BigTitle>
-        <Subtitle>Landscape and Astrophotography<br />Aashish Sheshadri</Subtitle>
+        <Subtitle>Landscape and Astrophotography</Subtitle>
       </Hero>
-      <Projects offset={1}>
+      <About offset={1}>
+        <Title>About</Title>
+        <AboutHero>
+          <Avatar src={avatar} alt="Aashish Sheshadri" />
+          <AboutSub>
+            Collecting photons that have been travelling several light years from distant stars in the midst of
+          man created photons to paint a truly telling picture.
+          </AboutSub>
+        </AboutHero>
+        <AboutDesc>
+          <InstaCard />
+        </AboutDesc>
+      </About>
+      <Projects offset={2}>
         <Title>Galleries</Title>
         <ProjectsWrapper>
           <ProjectCard
@@ -101,19 +114,6 @@ const Index = ({}) => (
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <About offset={2.9}>
-        <Title>About</Title>
-        <AboutHero>
-          <Avatar src={avatar} alt="Aashish Sheshadri" />
-          <AboutSub>
-            Collecting photons that have been travelling several light years from distant stars in the midst of
-          man created photons to paint a truly telling picture.
-          </AboutSub>
-        </AboutHero>
-        <AboutDesc>
-          <InstaCard />
-        </AboutDesc>
-      </About>
       <Contact offset={3.5}>
         <Inner>
           <Title>Get in touch</Title>
