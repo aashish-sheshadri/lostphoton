@@ -85,7 +85,7 @@ export const GalleryGalaxy = () => {
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-  console.log(images)
+  
   const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
     itemsPerRow =>
       // Split images into groups of the given size
