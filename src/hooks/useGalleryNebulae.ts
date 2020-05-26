@@ -20,7 +20,7 @@ const useGalleryNebulae = () => {
     query {
       allFile(
           filter: { sourceInstanceName: { eq: "content/nebulae" } },
-          sort: { order: ASC, fields: name }
+          sort: { order: DESC, fields: name }
       ) {
         nodes {
           id

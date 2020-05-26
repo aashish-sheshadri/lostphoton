@@ -20,7 +20,7 @@ const useGalleryLandscapes = () => {
     query {
       allFile(
           filter: { sourceInstanceName: { eq: "content/landscapes" } },
-          sort: { order: ASC, fields: name }
+          sort: { order: DESC, fields: name }
       ) {
         nodes {
           id

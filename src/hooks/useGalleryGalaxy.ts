@@ -20,7 +20,7 @@ const useGalleryGalaxy = () => {
     query {
       allFile(
           filter: { sourceInstanceName: { eq: "content/galaxy" } },
-          sort: { order: ASC, fields: name }
+          sort: { order: DESC, fields: name }
       ) {
         nodes {
           id

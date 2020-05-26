@@ -46,27 +46,46 @@ type Props = {
 
 export const GalleryDefault = () => {
   const images = useGalleryDefault();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);
@@ -79,8 +98,8 @@ export const GalleryDefault = () => {
 
 
 export const GalleryGalaxy = () => {
-  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
   const images = useGalleryGalaxy();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
   const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
@@ -132,27 +151,46 @@ export const GalleryGalaxy = () => {
 
 export const GalleryMilkyway = () => {
   const images = useGalleryMilkyway();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);
@@ -165,27 +203,46 @@ export const GalleryMilkyway = () => {
 
 export const GalleryLandscapes = () => {
   const images = useGalleryLandscapes();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);
@@ -198,27 +255,46 @@ export const GalleryLandscapes = () => {
 
 export const GalleryNebulae = () => {
   const images = useGalleryNebulae();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);
@@ -231,27 +307,46 @@ export const GalleryNebulae = () => {
 
 export const GallerySolarSystem = () => {
   const images = useGallerySolarSystem();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);
@@ -264,27 +359,46 @@ export const GallerySolarSystem = () => {
 
 export const GalleryStarClusters = () => {
   const images = useGalleryStarClusters();
+  const itemsPerRowByBreakpoints = [1, 2, 3, 4, 5, 6, 7, 8];
+  const aspectRatios = images.map(image => image.fluid.aspectRatio);
   const [showImageIndex, setShowImageIndex] = React.useState<
     number | undefined
   >(undefined);
-
+  
+  const rowAspectRatioSumsByBreakpoints = itemsPerRowByBreakpoints.map(
+    itemsPerRow =>
+      // Split images into groups of the given size
+      chunk(aspectRatios, itemsPerRow).map(rowAspectRatios =>
+        // Sum aspect ratios of images in the given row
+        sum(rowAspectRatios),
+      ),
+  );
   return (
     <div>
-      <Grid>
-        {images.map((image, index) => (
-          <Tile
-            key={image.id}
-            onClick={() => {
-              setShowImageIndex(index);
-            }}
-          >
-            <Img alt={image.name} fluid={image.fluid} {...imgStyles} />
-          </Tile>
-        ))}
-      </Grid>
+      {images.map((image, index) => (
+        <Box
+          width={rowAspectRatioSumsByBreakpoints.map(
+            // Return a value for each breakpoint
+            (rowAspectRatioSums, j) => {
+              // Find out which row the image is in and get its aspect ratio sum
+              const rowIndex = Math.floor(index / itemsPerRowByBreakpoints[j]);
+              const rowAspectRatioSum = rowAspectRatioSums[rowIndex];
+              return `${(image.fluid.aspectRatio / rowAspectRatioSum) * 100}%`;
+            },
+          )}
+          onClick={() => {
+            setShowImageIndex(index);
+          }}
+          css={{ display: 'inline-block' }}
+        >
+          <Img alt={image.name} fluid={image.fluid} {...imgStyles}/>
+        </Box>
+      ))}
+      
       {showImageIndex !== undefined && (
         <Lightbox
           hideDownload={true}
+          alt={images[showImageIndex].name}
           large={images[showImageIndex].publicURL}
           onClose={() => {
             setShowImageIndex(undefined);

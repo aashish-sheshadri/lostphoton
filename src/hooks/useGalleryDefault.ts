@@ -20,7 +20,7 @@ const useGalleryDefault = () => {
     query {
       allFile(
           filter: { sourceInstanceName: { eq: "content/gallery" } },
-          sort: { order: ASC, fields: name }
+          sort: { order: DESC, fields: name }
       ) {
         nodes {
           id

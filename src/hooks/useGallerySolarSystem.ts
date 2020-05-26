@@ -20,7 +20,7 @@ const useGallerySolarSystem = () => {
     query {
       allFile(
           filter: { sourceInstanceName: { eq: "content/solarsystem" } },
-          sort: { order: ASC, fields: name }
+          sort: { order: DESC, fields: name }
       ) {
         nodes {
           id
