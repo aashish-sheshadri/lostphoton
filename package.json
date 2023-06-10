@@ -9,7 +9,7 @@
     "@types/rebass": "^4.0.6",
     "babel-plugin-emotion": "^10.0.33",
     "babel-plugin-styled-components": "^1.10.6",
-    "gatsby": "^2.21.9",
+    "gatsby": "^4.25.7",
     "gatsby-cli": "^2.7.21",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-google-analytics": "^2.1.4",
